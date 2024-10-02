@@ -1,5 +1,5 @@
 # dify-mermaid-flask-service
-为AI带路党Pro视频<a href="https://www.bilibili.com/video/BV1PntFeqEe9" target="_blank">Dify实战教程:搭建AI自动生成流程图、序列图、甘特图等图表zagent</a>准备
+为AI带路党Pro视频<a href="https://www.bilibili.com/video/BV1PntFeqEe9" target="_blank">Dify实战教程:搭建AI自动生成流程图、序列图、甘特图等图表agent</a>准备
 
 ## 使用指南
 
