@@ -6,7 +6,7 @@
 
 #### 使用指南
 
-1. 拷贝mermain-flask-service到dify的docker目录中
+1. 拷贝mermaid-flask-service到dify的docker目录中
 2. 修改docker-compose.yaml文件，在services字段下新增一个mermaid-flask-service子级，具体配置如下。
 ```yaml
   mermaid-flask-service:
