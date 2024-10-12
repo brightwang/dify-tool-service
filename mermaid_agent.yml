@@ -38,7 +38,7 @@ model_config:
   file_upload:
     image:
       detail: high
-      enabled: true
+      enabled: false
       number_limits: 3
       transfer_methods:
       - remote_url
@@ -47,7 +47,7 @@ model_config:
     completion_params:
       stop: []
     mode: chat
-    name: gpt-4o-mini
+    name: gpt-4o
     provider: azure_openai
   more_like_this:
     enabled: false
