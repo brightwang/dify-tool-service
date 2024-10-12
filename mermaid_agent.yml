@@ -18,7 +18,7 @@ model_config:
     - enabled: true
       isDeleted: false
       notAuthor: false
-      provider_id: b2a72423-76b5-4c8f-86da-ca52a4b5b19b
+      provider_id: a9bd80ee-e5f5-4a85-8868-813a0ff62666
       provider_name: mermaid作图工具
       provider_type: workflow
       tool_label: mermaid作图工具
@@ -38,7 +38,7 @@ model_config:
   file_upload:
     image:
       detail: high
-      enabled: false
+      enabled: true
       number_limits: 3
       transfer_methods:
       - remote_url
@@ -47,12 +47,12 @@ model_config:
     completion_params:
       stop: []
     mode: chat
-    name: gpt-4o
+    name: gpt-4o-mini
     provider: azure_openai
   more_like_this:
     enabled: false
   opening_statement: ''
-  pre_prompt: "参考资料：{{content}}\n你是一名智能助手\n你的任务是根据参考资料调用mermaid_service生成mermaid格式的内容并原样返回svg图片的预览链接\n\
+  pre_prompt: "参考资料：\"\"\"{{content}}\"\"\"\n你是一名智能助手\n你的任务是根据参考资料调用mermaid_service生成mermaid格式的内容并原样返回svg图片的预览链接\n\
     例如:\n\"\"\"\ngraph\n   accTitle: My title here\n   accDescr: My description here\n\
     \   A-->B\n\"\"\"\n"
   prompt_type: simple
