@@ -86,3 +86,22 @@
 4. 在dify中导入marp的PPT工具.yml和marp_agent.yml
    - 把marp的PPT工具创建出来的工作流发布为工具,名字设置为save_marp_content，工具描述为"保存marp ppt内容，并获得ppt链接"
    - 在marp_agent.yml创建出的agent里删除旧工具，重新添加引用save_marp_content工具
+
+### dify-quiz-flask-service
+1. 拷贝quiz-flask-service到dify的docker目录中
+2. 修改docker-compose.yaml文件，在services字段下新增一个marp-flask-service子级，具体配置如下。
+   ```yaml
+  quiz-flask-service:
+    build: ./quiz-flask-service
+    container_name: quiz-flask-service
+    restart: always
+    volumes:
+      - ./quiz-flask-service/data:/app/data
+    ports:
+      - 5006:5006
+   ```
+3. 执行docker compose up
+4. 在dify中导入创建试卷工作流.yml和保存试卷agent.yml
+   - 把创建试卷工作流.yml创建出来的工作流发布为工具,名字设置为save_quiz_and_get_url，工具描述为"保存试卷并获取试卷url"
+   - 在保存试卷agent.yml创建出的agent里删除旧工具，重新添加引用save_quiz_and_get_url工具
+""

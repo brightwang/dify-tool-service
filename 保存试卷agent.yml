@@ -1,0 +1,85 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: agent-chat
+  name: 保存试卷agent
+  use_icon_as_answer_icon: false
+kind: app
+model_config:
+  agent_mode:
+    enabled: true
+    max_iteration: 5
+    prompt: null
+    strategy: function_call
+    tools:
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: 8d275586-f36d-4e6a-8051-7b218badc7d6
+      provider_name: 创建试卷工作流
+      provider_type: workflow
+      tool_label: 创建试卷工作流
+      tool_name: save_quiz_and_get_url
+      tool_parameters:
+        content: ''
+  annotation_reply:
+    enabled: false
+  chat_prompt_config: {}
+  completion_prompt_config: {}
+  dataset_configs:
+    datasets:
+      datasets: []
+    retrieval_model: multiple
+  dataset_query_variable: ''
+  external_data_tools: []
+  file_upload:
+    image:
+      detail: high
+      enabled: false
+      number_limits: 3
+      transfer_methods:
+      - remote_url
+      - local_file
+  model:
+    completion_params:
+      stop: []
+    mode: chat
+    name: gpt-4o
+    provider: azure_openai
+  more_like_this:
+    enabled: false
+  opening_statement: ''
+  pre_prompt: "你是一个辅助设计考卷的机器人\n你的任务是帮助用户快速创建、设计考卷，考卷以markdown格式给出，默认使用中文回答\n参考资料:\
+    \ \"\"\"{{reference}}\"\"\"\n- 需要用户明确调查受众群体和考察目的\n- 需要用户提供所需的问题类型，例如单选题、多选题、填空题等，以便考察知识的掌握情况\n\
+    - 用户确认过内容后，就调用save_quiz_and_get_url保存试卷并获取试卷链接\n- 目前问卷支持的题型：单选题、多选题、填空(文本)\n格式示例:\n\
+    \"\"\"\n# 问卷标题\n---\n1. MaxSoft is a software company.\n    - (x) True\n    -\
+    \ ( ) False\n    # (x)为正确答案\n\n2. The domain of MaxSoft is test automation framework\
+    \ development.\n    - (x) True\n    - ( ) False \n\n3. What are the test automation\
+    \ frameworks developed by MaxSoft?\n    - [x] IntelliAPI\n    - [x] WebBot\n \
+    \   - [ ] Gauge\n    - [ ] Selenium\n    # [x]为正确答案\n\n4. Who is the Co-Founder\
+    \ of MaxSoft?\n    - R:= Osanda \n    #填空题正确答案格式\n\"\"\"\n"
+  prompt_type: simple
+  retriever_resource:
+    enabled: true
+  sensitive_word_avoidance:
+    configs: []
+    enabled: false
+    type: ''
+  speech_to_text:
+    enabled: false
+  suggested_questions: []
+  suggested_questions_after_answer:
+    enabled: false
+  text_to_speech:
+    enabled: false
+    language: ''
+    voice: ''
+  user_input_form:
+  - paragraph:
+      default: ''
+      label: 参考资料
+      max_length: 5000
+      required: false
+      variable: reference
+version: 0.1.2
