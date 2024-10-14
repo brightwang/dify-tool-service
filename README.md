@@ -88,10 +88,12 @@
    - 在marp_agent.yml创建出的agent里删除旧工具，重新添加引用save_marp_content工具
 
 ### dify-quiz-flask-service 
+
 视频<a href="https://www.bilibili.com/video/BV12ZnRe5ERh" target="_blank">让AI给你出试卷-Dify实战：搭建自动生成试卷的Agent</a>相关代码
+
 1. 拷贝quiz-flask-service到dify的docker目录中
 2. 修改docker-compose.yaml文件，在services字段下新增一个marp-flask-service子级，具体配置如下。
-   ```yaml
+```yaml
   quiz-flask-service:
     build: ./quiz-flask-service
     container_name: quiz-flask-service
@@ -100,7 +102,7 @@
       - ./quiz-flask-service/data:/app/data
     ports:
       - 5006:5006
-   ```
+```
 3. 执行docker compose up
 4. 在dify中导入创建试卷工作流.yml和保存试卷agent.yml
    - 把创建试卷工作流.yml创建出来的工作流发布为工具,名字设置为save_quiz_and_get_url，工具描述为"保存试卷并获取试卷url"
