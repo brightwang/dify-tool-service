@@ -29,6 +29,7 @@ RUN apt-get update && apt-get install -y \
     libxtst6 \
     libxshmfence1 \
     && rm -rf /var/lib/apt/lists/*
+RUN npm install -g n && n stable
 
 RUN npm install npm@latest -g && \
     npm install n -g && \
