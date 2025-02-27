@@ -30,6 +30,7 @@ RUN apt-get update && apt-get install -y \
     libxshmfence1 \
     && rm -rf /var/lib/apt/lists/*
 
+RUN npm install -g n && n stable
 RUN npm install npm@latest -g && \
     npm install n -g && \
     n latest
